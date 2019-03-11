@@ -194,6 +194,10 @@ func siteInfo(domain string, f getFunc) (*Site, error) {
 	}
 	defer resp.Body.Close()
 
+	if resp.StatusCode != http.StatusOK {
+		return nil, fmt.Errorf("status code: %d, no data for %s?", resp.StatusCode, domain)
+	}
+
 	return parse(resp.Body)
 }
 
