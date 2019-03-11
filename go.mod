@@ -1,4 +1,4 @@
-module github.com/ilyaglow/go-alexa-siteinfo
+module github.com/ilyaglow/alexa-siteinfo-parser
 
 go 1.12
 
