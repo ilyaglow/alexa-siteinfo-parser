@@ -30,6 +30,9 @@ const (
 	asiLocation    = "https://www.alexa.com/siteinfo/%s"
 )
 
+// ErrNoEnoughData is returned when a domain is not in top 1M.
+const ErrNoEnoughData = "no enough data"
+
 // Conf is a asip configuration.
 type Conf struct {
 	client *http.Client
@@ -100,7 +103,7 @@ func parse(body io.Reader) (*Site, error) {
 	}
 
 	if noEnoughData(d) {
-		return nil, errors.New("not enough data")
+		return nil, errors.New(ErrNoEnoughData)
 	}
 
 	var s Site
