@@ -31,7 +31,7 @@ const (
 )
 
 // ErrNoEnoughData is returned when a domain is not in top 1M.
-const ErrNoEnoughData = "no enough data"
+var ErrNoEnoughData = errors.New("asip: no enough data")
 
 // Conf is a asip configuration.
 type Conf struct {
@@ -103,7 +103,7 @@ func parse(body io.Reader) (*Site, error) {
 	}
 
 	if noEnoughData(d) {
-		return nil, errors.New(ErrNoEnoughData)
+		return nil, ErrNoEnoughData
 	}
 
 	var s Site
