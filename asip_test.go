@@ -179,7 +179,7 @@ func TestNoData(t *testing.T) {
 		t.Fatal(err)
 	}
 	_, err = parse(body)
-	if err == nil {
+	if err != ErrNoEnoughData {
 		t.Fatal("want error, but got no error")
 	}
 }
