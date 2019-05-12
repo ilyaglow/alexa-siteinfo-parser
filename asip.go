@@ -27,7 +27,7 @@ const (
 	seTitle        = "div.row-fluid.siteinfo-site-summary span div p"
 	seDescription  = "section#contact-panel-content div.row-fluid span.span8 p.color-s3"
 	seNoData       = "section#no-enough-data"
-	asiLocation    = "https://www.alexa.com/siteinfo/%s"
+	asiLocation    = "https://www.alexa.com/siteinfo/%s?ver=classic"
 )
 
 // ErrNoEnoughData is returned when a domain is not in top 1M.
